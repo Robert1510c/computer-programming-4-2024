@@ -9,7 +9,8 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           java-version: '17'
-          distribution: 'coretto'
+          distribution: 'corretto'
       - name: "Run maven test"
         run: mvn -DskipTests package
       - run: ls -la target/
+      - run: mv target/*.jar target/app.jar
